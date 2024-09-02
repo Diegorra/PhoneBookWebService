@@ -1,0 +1,36 @@
+GET http://localhost:3001/info
+###
+GET http://localhost:3001/api/persons
+
+###
+GET http://localhost:3001/api/persons/2
+
+###
+DELETE http://localhost:3001/api/persons/2
+
+###
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Diego",
+    "number": "+34 656656656"
+}
+
+### Wrong parameters
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "person": "Diego"
+}
+
+### Contact already added
+POST http://localhost:3001/api/persons HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Arto Hellas",
+    "number": "+34 656656656"
+}
+
